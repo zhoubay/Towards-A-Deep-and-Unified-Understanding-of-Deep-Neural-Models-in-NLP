@@ -74,8 +74,8 @@ class Interpreter(nn.Module):
 
         """
         super(Interpreter, self).__init__()
-        self.s = x.size(0)
-        self.d = x.size(1)
+        self.s = x.size(-2)
+        self.d = x.size(-1)
         self.ratio = nn.Parameter(torch.randn(self.s, 1), requires_grad=True)
 
         self.scale = scale
